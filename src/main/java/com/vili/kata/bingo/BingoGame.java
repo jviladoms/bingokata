@@ -18,23 +18,7 @@ public class BingoGame {
     }
 
     public Flux<Ball> playGame(List<Card> cards) {
-        this.cards = cards;
-        return ballsGenerator.generate()
-                .timeout(Duration.ofSeconds(3L))
-                .onErrorResume(TimeoutException.class, e -> Flux.just(BingoNumber.ERROR_NUMBER))
-                .map(this::createBallWithNumber);
-
+        throw new UnsupportedOperationException();
     }
 
-    private Ball createBallWithNumber(BingoNumber bingoNumber) {
-        cards.forEach(card -> card.check(bingoNumber));
-        Optional<Card> prizedCard = cards.stream().filter(Card::hasPrize).findFirst();
-
-        if(prizedCard.isPresent()){
-            return new Ball(bingoNumber,prizedCard.get().getPrize(),prizedCard.get());
-        } else {
-            return new Ball(bingoNumber,Prize.NO_PRIZE,null);
-        }
-
-    }
 }
