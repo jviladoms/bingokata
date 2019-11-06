@@ -1,6 +1,6 @@
 # Reactive Programming Bingo Kata
 
-##What Bingo is?
+## What Bingo is?
 
 Bingo is a game of chance in which each player matches numbers printed in different arrangements on 3×9 cards which the numbers the game host (caller) draws at random, marking the selected numbers with tiles. The cards contain 15 numbers from 1 to 90 disposed in 3 lines of 9 numbers.
 
